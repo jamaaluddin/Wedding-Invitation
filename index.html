@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan Diyah & Jamaal</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Georgia', serif;
+    }
+
+    body {
+      height: 100vh;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* CANVA EMBED */
+    .canva-frame {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* OVERLAY */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .content {
+      color: #fff;
+      max-width: 420px;
+      width: 100%;
+    }
+
+    .title {
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .couple {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .guest {
+      font-size: 15px;
+      margin-bottom: 5px;
+      opacity: 0.9;
+    }
+
+    .guest-name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .btn-open {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 30px;
+      background: #ffffff;
+      color: #000;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-open:hover {
+      transform: scale(1.05);
+      background: #f2f2f2;
+    }
+
+    @media (max-width: 480px) {
+      .couple {
+        font-size: 24px;
+      }
+      .guest-name {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- EMBED COVER CANVA -->
+    <iframe
+      class="canva-frame"
+      src="https://undangan-jamaaldiyah.my.canva.site/dahad2c-6s4"
+      allowfullscreen>
+    </iframe>
+
+    <!-- OVERLAY -->
+    <div class="overlay">
+      <div class="content">
+
+        <div class="title">UNDANGAN PERNIKAHAN</div>
+
+        <div class="couple">
+          Diyah & Jamaal
+        </div>
+
+        <div class="guest">Kepada Yth.</div>
+        <div class="guest-name" id="guestName">
+          Tamu Undangan
+        </div>
+
+        <!-- TOMBOL BUKA UNDANGAN -->
+        <a
+          class="btn-open"
+          href="https://undangan-jamaaldiyah.my.canva.site/undangan-walimah-d-j"
+          target="_blank">
+          Buka Undangan
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SCRIPT NAMA TAMU -->
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const guest = params.get("to");
+
+    if (guest) {
+      document.getElementById("guestName").textContent =
+        guest.replace(/\+/g, " ");
+    }
+  </script>
+
+</body>
+</html>
